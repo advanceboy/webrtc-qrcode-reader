@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "preserveConstEnums": true,
+        "strictNullChecks": true,
+        "target": "es5",
+        "lib": [
+            "dom",
+            "es2015.promise",
+            "es5"
+        ]
+    }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "webrtc-qrcode-reader",
+  "version": "0.0.1",
+  "description": "QRCode Reader using WebRTC API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/advanceboy/webrtc-qrcode-reader.git"
+  },
+  "keywords": [
+    "qrcode",
+    "webrtc",
+    "html5"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/advanceboy/webrtc-qrcode-reader/issues"
+  },
+  "homepage": "https://github.com/advanceboy/webrtc-qrcode-reader#readme",
+  "devDependencies": {
+    "@types/gulp": "^3.8.32",
+    "@types/gulp-concat": "0.0.29",
+    "@types/gulp-rename": "0.0.31",
+    "@types/gulp-typescript": "0.0.32",
+    "@types/gulp-uglify": "0.0.29",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^3.1.5",
+    "gulp-uglify": "^2.0.1",
+    "typescript": "^2.1.6"
+  }
+}
