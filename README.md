@@ -1,37 +1,60 @@
-## Welcome to GitHub Pages
+webrtc-qrcode-reader
+====================
 
-You can use the [editor on GitHub](https://github.com/advanceboy/webrtc-qrcode-reader/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## About
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is a JavaScript library to create a QRCode reader for WebRTC compatible browser.
 
-### Markdown
+## Demo
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+See a demo: [https://advanceboy.github.io/webrtc-qrcode-reader/](https://advanceboy.github.io/webrtc-qrcode-reader/)
 
-```markdown
-Syntax highlighted code block
+## Usage
 
-# Header 1
-## Header 2
-### Header 3
+1. Include `jsqrcode-combined.min.js` and `webrtc-qrcode-reader.min.js` in the `lib` directory.
+1. Create a `<div>` element with a size you want to show.
+    ```
+    <div style="width: 480px; height: 480px;" id="scanner"></div>
+    ```
+1. Call the `WebRtcQR.startReaderAsync` function on the div element.
+    ```
+    WebRtcQR.startReaderAsync(document.getElementById('scanner');, function (success, result) {
+        if (success) {
+            // do something when code is read
+        } else {
+            // show scan errors
+        }
+    }, { zoomScale: 1.0 })
+        .catch(function (e) {
+            // show initialize video streaming errors
+        })
+        .then(function (context) {
+            // you got the QRCode reader context.
+        });
+    ```
+    * callback function will be called on each scanning.
+    * The Promise instance signs that the initialize of video streaming was succeed or not.
+1. You can configure scanning the through readerContext instance got from the Promise onFulfilled callback.
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+### Options
 
-**Bold** and _Italic_ and `Code` text
+* `scanInterval`
+    * scanning interval. default: 250(ms)
+* `zoomScale`
+    * zoom scaling. default: 1.0
+    * This parameter needs to be between 1.0 and 4.0.
+    * You can change this parameter after starting the scanning through `options` property of the ReaderContext.
+* `decodeSize`
+    * The temporary canvas size used in decoding. defailt: 480
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## LICENSE
 
-### Jekyll Themes
+### This Project
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/advanceboy/webrtc-qrcode-reader/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+See `LICENSE` file.
 
-### Support or Contact
+### jsqrcode
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+See the license notice implemented in the source code (`jsqrcode-combined.min.js`).

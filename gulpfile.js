@@ -19,13 +19,13 @@ gulp.task('compress jsqrcode', function () {
             "src/jsqrcode/src/gf256poly.js",
             "src/jsqrcode/src/gf256.js",
             "src/jsqrcode/src/decoder.js",
-            "src/jsqrcode/src/QRCode.js",
+            "src/jsqrcode/src/qrcode.js",
             "src/jsqrcode/src/findpat.js",
             "src/jsqrcode/src/alignpat.js",
             "src/jsqrcode/src/databr.js",
         ])
         .pipe(concat('jsqrcode-combined.js'))
-        .pipe(uglify())
+        .pipe(uglify({preserveComments: "license"}))
         .pipe(rename('jsqrcode-combined.min.js'))
         .pipe(gulp.dest('lib/'));
 });
@@ -34,7 +34,7 @@ gulp.task('compress jquery-qrcode-reader', function () {
     var tsProject = ts.createProject('tsconfig.json');
     return gulp.src('src/webrtc-qrcode-reader.ts')
         .pipe(tsProject())
-        .pipe(uglify())
+        .pipe(uglify({preserveComments: "license"}))
         .pipe(rename('webrtc-qrcode-reader.min.js'))
         .pipe(gulp.dest('lib/'));
 });
