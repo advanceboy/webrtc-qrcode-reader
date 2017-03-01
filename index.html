@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Try WebRTC QRCode Reader</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>WebRTC QRCode Reader</h1>
+        <p>Scan various QRCode!</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="cos-sm-12">
+                <div class="center-block" style="max-width: 400px;">
+                    <div class="embed-responsive embed-responsive-4by3">
+                        <div class="embed-responsive-item" id="scanner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="pull-right">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuZoom" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="true">
+                        Zoom
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuZoom">
+                            <li><a href="#" onclick="return false;" data-value="1">x1</a></li>
+                            <li><a href="#" onclick="return false;" data-value="2">x2</a></li>
+                            <li><a href="#" onclick="return false;" data-value="4">x4</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Output</h4>
+                    </div>
+                    <div id="output" class="panel-body" style="min-height: 40px">
+                    </div>
+                </div>
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Error</h4>
+                    </div>
+                    <div id="error" class="panel-body" style="min-height: 40px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="https://github.com/advanceboy/webrtc-qrcode-reader"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="lib/jsqrcode-combined.min.js"></script>
+    <script src="lib/webrtc-qrcode-reader.min.js"></script>
+    <script src="main.js"></script>
+</body>
